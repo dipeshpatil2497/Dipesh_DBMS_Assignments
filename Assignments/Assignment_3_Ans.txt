@@ -1,0 +1,13 @@
+1.Does ANSI recognize the data type DATE?
+Ans : Yes, ANSI recognize data type DATE
+	range of DATE data type is 1st jan 1000 AD to 31st DEc 9999 AD
+	And default date formate is 'YYYY-MM--DD'
+
+
+
+
+
+2.Which subdivision of SQL is used to insert values in tables?
+Ans : 	
+	DML(Data Manipulation Langauage) is used 
+	to insert values in tables.
