@@ -1,0 +1,236 @@
+
+create database Exercise_1;
+
+
+use Exercise_1;
+
+
+show databases;
+
+
+
+----------------------------------------------------------------------------
+-- 
+1. Create the table SEMP with the following structure:-
+
+
+create table SEMP
+
+(
+
+EMPNO CHAR(4),
+
+EMPNAME CHAR(20),
+
+BASIC FLOAT(9,2),
+
+DEPTNO CHAR(2),
+
+DEPTHEAD CHAR(4)
+
+);
+
+
+
+--------------------------------------------------------------------------------
+
+-- 
+
+2. Create the table SDEPT with the following structure:-
+
+
+create table SDEPT
+(
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15)
+);
+
+
+
+---------------------------------------------------------------------------------
+
+-- 
+
+3. Insert into the SDEPT table the following values:-
+
+
+
+insert into sdept values
+('10', 'Development');
+
+
+insert into sdept values
+('20', 'Training'); 
+
+
+
+----------------------------------------------------------------------------------
+
+-- 
+
+4. Insert into the SEMP table the following values:-
+
+
+
+insert into semp values
+('0001', 'SUNIL', 6000, '10',NULL);
+
+
+
+insert into semp values
+('0002', 'HIREN', 8000, '20',NULL);
+
+
+
+insert into semp values
+('0003', 'ALI', 4000, '10', '0001');
+
+
+
+insert into semp values
+('0004', 'GEORGE', 6000,null, '0002');
+			
+-- OR
+
+insert into semp(empno,empname,basic,depthead) values
+('0004', 'GEORGE', 6000,'0002');
+
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+
+create table S
+(
+`S#` char(4),
+Sname varchar(25),
+Status Varchar(25),
+City varchar(20)
+);
+
+
+create table P
+(
+`P#` char(4),
+Pname varchar(25),
+color varchar(20),
+Weight int(10),
+city varchar(20)
+);
+
+
+create table J
+(
+`J#` char(4),
+Jname varchar(25),
+City varchar(20)
+);
+
+
+create table SPJ
+(
+`S#` char(4),
+`P#` char(4),
+`J#` char(4),
+Qty int(10)
+);
+
+
+
+show tables;
+
+
+
+insert into s values ('S1','Dipesh','10','Jalgaon');
+
+insert into s values ('S2','Vipul','20','pune');
+
+insert into s values ('S3','Bhushan','30','Bhsawal');
+
+
+
+
+
+
+insert into p(`P#`) values ('P1');
+
+insert into p(`P#`) values ('P2');
+
+insert into p(`P#`) values ('P3');
+
+
+
+insert into J(`J#`) values ('J1');
+
+insert into J(`J#`) values ('J2');
+
+insert into J(`J#`) values ('J3');
+
+
+
+show tables;
+
+select * from p;
+
+select * from j;
+
+
+---------------------------------------------------------------------------------------------------
+
+-- 
+
+5. Display all the data from the S table.
+
+Ans : select * from s;
+
+
+
+----------------------------------------------------------------------------------------------------
+-- 
+6. Display only the S# and SNAME fields from the S table.
+
+Ans : select `S#`, Sname from s;
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+7. Display the PNAME and COLOR from the P table for the CITY=”London”.
+Ans : Select pname , color from p where city = 'London';
+
+---------------------------------------------------------------------------------------------------
+8. Display all the Suppliers from London.
+Ans : Select * from supplier where city = 'London' ;
+
+-------------------------------------------------------------------------------------------------
+9. Display all the Suppliers from Paris or Athens.
+Ans : Select * from s where city = 'Paris' or city = 'Athens';
+
+------------------------------------------------------------------------------------------------
+10. Display all the Projects in Athens.
+Ans : Select * from p where city = 'Athens';
+
+------------------------------------------------------------------------------------------------
+11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+Ans : Select pname from p where weight >= 12 or weight <= 14;
+
+------------------------------------------------------------------------------------------------
+12. Display all the Suppliers with a Status greater than or equal to 20.
+Ans : Select `S#` , status from s where status >= 20;
+
+------------------------------------------------------------------------------------------------
+13. Display all the Suppliers except the Suppliers from London.
+Ans : Select * from s where city != London;
+
+-------------------------------------------------------------------------------------------------
+14. Display only the Cities from where the Suppliers come from.
+Ans : Select city from s;
+
+------------------------------------------------------------------------------------------------
+15. Assuming that the Part Weight is in GRAMS, display the same in
+    MILLIGRAMS and KILOGRAMS. 
+Ans : Select weight "Weight in g" , weight/1000  "Weight in Kg" , weight*1000 "Weight in Mg" from p;
