@@ -1,0 +1,34 @@
+
+1. Display the minimum Status in the Supplier table.
+Ans : select min(status) from supplier;
+
+2. Display the maximum Weight in the Parts table.
+Ans :select  max(Weight) from tableparts;
+
+
+
+3. Display the average Weight of the Parts.
+Ans :
+select avg(Weight) from tableparts;
+
+4. Display the total Quantity sold for part ‘P1’.
+Ans :select qty from supplier_parts_project where `P#` = 'P1';
+
+
+
+5. Display the total Quantity sold for each part.
+Ans :select `P#`,sum(qty) from supplier_parts_project group by `P#`;
+
+6. Display the average Quantity sold for each part.
+Ans : select `P#`,avg(qty) from supplier_parts_project group by `P#`;
+
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity
+is greater than 800. 
+Ans : select `P#`,max(qty) from supplier_parts_project where qty > 800 group by `P#`;
+
+8. Display the Status and the count of Suppliers with that Status
+
+Ans :
+
+
+select Sname,Status,count(status) from supplier group by status;
